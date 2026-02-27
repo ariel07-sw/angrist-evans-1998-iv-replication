@@ -205,3 +205,15 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+# exclude data folders (large files)
+data/raw/
+data/processed/
+
+# exclude large data formats
+*.sas7bdat
+*.csv
+*.zip
+
+# notebook / python junk
+.ipynb_checkpoints/
+__pycache__/

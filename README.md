@@ -49,3 +49,50 @@ This repo intentionally does **not** track large data files. Folder structure is
 - `data/processed/.gitkeep`
 
 If you need to reproduce locally, follow the steps above to place raw data under `data/raw/`.
+# GenAI Use and Transparency Disclosure
+
+This notebook includes code and analysis developed with the assistance of Generative AI. I used AI primarily as a research and programming assistant to support the implementation of my extension, but I personally reviewed, edited, and executed all final code and interpreted the final results.
+
+## GenAI prompts used
+During the project, I used prompts of the following types:
+
+1. **Extension design prompts**
+   - Identify a meaningful extension to the original IV paper that adds analytical value.
+   - Suggest a Pathway 2 heterogeneous treatment effects design based on maternal education.
+
+2. **Data and variable prompts**
+   - Help identify variables in the Census dataset corresponding to:
+     - maternal education
+     - number of children
+     - sex of the first two children
+     - maternal labor supply outcomes
+   - Suggest how to construct:
+     - `more_than_2`
+     - `same_sex`
+     - `high_edu`
+
+3. **Econometric coding prompts**
+   - Write Python/Colab code for subgroup-specific 2SLS estimation.
+   - Help specify controls consistently across education subgroups.
+   - Help generate code for extracting coefficients, standard errors, and confidence intervals.
+
+4. **Visualization prompts**
+   - Write `matplotlib` code for a publication-style horizontal coefficient plot (forest plot).
+   - Improve the plot styling for a production-ready final deliverable.
+
+5. **Interpretation prompts**
+   - Help summarize the heterogeneous IV findings in plain English.
+   - Help write concise result interpretation and executive-summary language.
+
+## GenAI tools used
+- ChatGPT
+- Google Colab
+- Python packages: `pandas`, `numpy`, `matplotlib`, `linearmodels`
+
+## Role of GenAI in this notebook
+GenAI was used to accelerate coding, debugging, visualization, and drafting. However, the final empirical specification, subgroup design, and interpretation of results were verified by me and reflect my own review of the output.
+# GenAI Transparency Statement
+
+For this extension project, I used Generative AI as a research and coding assistant to help design, implement, and present my analysis. My extension follows **Pathway 2: Heterogeneous Treatment Effects (HTE)** and examines whether the causal effect of having more than two children on maternal labor supply differs by maternal education. I used GenAI to help identify a suitable extension based on the original paper, suggest an education-based subgroup design, clarify which variables in the dataset correspond to fertility, child sex composition, maternal education, and labor supply, and generate Python/Colab code for the subgroup-specific 2SLS models. I also used GenAI to help write plotting code for the final coefficient plot / forest plot and to help interpret the estimated coefficients, standard errors, and confidence intervals in clear language.
+
+The main prompts I used included requests such as: identify a meaningful extension to Angrist and Evans (1998), suggest a Pathway 2 HTE design using maternal education, help construct variables such as `more_than_2`, `same_sex`, and an education-group indicator, write Python code for 2SLS estimation in separate education subgroups, and generate a production-style matplotlib forest plot. The main tools used were **ChatGPT**, **Google Colab**, and the Python libraries **pandas**, **numpy**, **matplotlib**, and **linearmodels**. GenAI was used to accelerate coding, debugging, visualization, and drafting, but I reviewed, edited, and ran all final code myself, and I take responsibility for the final model specification, analysis, and interpretation.

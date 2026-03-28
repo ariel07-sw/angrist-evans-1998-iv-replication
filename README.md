@@ -96,3 +96,28 @@ GenAI was used to accelerate coding, debugging, visualization, and drafting. How
 For this extension project, I used Generative AI as a research and coding assistant to help design, implement, and present my analysis. My extension follows **Pathway 2: Heterogeneous Treatment Effects (HTE)** and examines whether the causal effect of having more than two children on maternal labor supply differs by maternal education. I used GenAI to help identify a suitable extension based on the original paper, suggest an education-based subgroup design, clarify which variables in the dataset correspond to fertility, child sex composition, maternal education, and labor supply, and generate Python/Colab code for the subgroup-specific 2SLS models. I also used GenAI to help write plotting code for the final coefficient plot / forest plot and to help interpret the estimated coefficients, standard errors, and confidence intervals in clear language.
 
 The main prompts I used included requests such as: identify a meaningful extension to Angrist and Evans (1998), suggest a Pathway 2 HTE design using maternal education, help construct variables such as `more_than_2`, `same_sex`, and an education-group indicator, write Python code for 2SLS estimation in separate education subgroups, and generate a production-style matplotlib forest plot. The main tools used were **ChatGPT**, **Google Colab**, and the Python libraries **pandas**, **numpy**, **matplotlib**, and **linearmodels**. GenAI was used to accelerate coding, debugging, visualization, and drafting, but I reviewed, edited, and ran all final code myself, and I take responsibility for the final model specification, analysis, and interpretation.
+## Step 4.1: The Executive Memo
+
+### Executive Memo
+
+**Bottom Line Up Front (BLUF).**  
+My replication and extension suggest that the causal effect is negative: the treatment reduces maternal weeks worked, and this effect is substantially stronger for mothers with lower education. The subgroup IV estimates indicate that the labor-supply response is not uniform, with the largest negative effect concentrated in the low-education group.
+
+**The Mechanism.**  
+I use an **instrumental variables (IV)** design to isolate causal variation in the endogenous explanatory variable. Intuitively, the IV strategy works like a naturally occurring random assignment: instead of comparing mothers who may differ in many unobserved ways, I use an external source of variation that shifts the treatment but is not supposed to directly affect maternal weeks worked except through that treatment channel. In real-world terms, this is similar to using an outside policy or institutional rule as a “push” that changes exposure for some individuals but not others, allowing the analysis to approximate a randomized experiment.
+
+**The Visual Evidence.**  
+The figure below provides the clearest summary of the extension result. It shows heterogeneous 2SLS estimates by maternal education group, with point estimates and 95% confidence intervals.
+
+<p align="center">
+  <img src="images/iv_forest_plot_weeks.png" alt="Heterogeneous IV Effect on Maternal Weeks Worked" width="850">
+</p>
+
+**Caption:**  
+*Heterogeneous IV Effect on Maternal Weeks Worked.* Points denote subgroup-specific 2SLS estimates, and horizontal bars represent 95% confidence intervals. The estimated effect is much more negative for the low-education group (-5.88) than for the high-education group (-1.25). The confidence interval for the low-education group remains below zero, while the interval for the high-education group crosses zero, indicating weaker statistical evidence in that subgroup.
+
+**Business / Policy Implications.**  
+The main implication is that average treatment effects can hide important distributional differences. A policy or institutional change that appears moderate on average may impose substantially larger labor-supply costs on lower-education mothers. Stakeholders should therefore avoid one-size-fits-all policy interpretation and instead design targeted support for the most affected subgroup. In practice, that means pairing policy changes with compensating resources, labor-market support, or family assistance for lower-education mothers, who appear most vulnerable to the negative employment response.
+
+**Repository Guide.**  
+This repository contains the full empirical workflow, including data preparation, baseline replication, heterogeneous IV estimation, statistical diagnostics, and final visual outputs. The notebook documents each step of the causal analysis, while the figures and memo summarize the most decision-relevant findings.

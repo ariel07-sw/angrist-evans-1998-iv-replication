@@ -106,7 +106,8 @@ My replication and extension suggest that the causal effect is negative: the tre
 **The Mechanism.**  
 I use an **instrumental variables (IV)** design to isolate causal variation in the endogenous explanatory variable. Intuitively, the IV strategy works like a naturally occurring random assignment: instead of comparing mothers who may differ in many unobserved ways, I use an external source of variation that shifts the treatment but is not supposed to directly affect maternal weeks worked except through that treatment channel. In real-world terms, this is similar to using an outside policy or institutional rule as a “push” that changes exposure for some individuals but not others, allowing the analysis to approximate a randomized experiment.
 
-**The Visual Evidence.**  
+### The Visual Evidence
+
 The figure below provides the clearest summary of the extension result. It shows heterogeneous 2SLS estimates by maternal education group, with point estimates and 95% confidence intervals.
 
 <p align="center">
@@ -115,7 +116,6 @@ The figure below provides the clearest summary of the extension result. It shows
 
 **Caption:**  
 *Heterogeneous IV Effect on Maternal Weeks Worked.* Points denote subgroup-specific 2SLS estimates, and horizontal bars represent 95% confidence intervals. The estimated effect is much more negative for the low-education group (-5.88) than for the high-education group (-1.25). The confidence interval for the low-education group remains below zero, while the interval for the high-education group crosses zero, indicating weaker statistical evidence in that subgroup.
-
 **Business / Policy Implications.**  
 The main implication is that average treatment effects can hide important distributional differences. A policy or institutional change that appears moderate on average may impose substantially larger labor-supply costs on lower-education mothers. Stakeholders should therefore avoid one-size-fits-all policy interpretation and instead design targeted support for the most affected subgroup. In practice, that means pairing policy changes with compensating resources, labor-market support, or family assistance for lower-education mothers, who appear most vulnerable to the negative employment response.
 
